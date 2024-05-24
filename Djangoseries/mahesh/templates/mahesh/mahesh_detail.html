@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %}
-  All Computer Item
+  All Computer Item Desciprition
 {% endblock  %}
 
 {% block content %}
-  <h1>Choose Item As per your wish</h1>
+  <h1>Computer Desciprition</h1>
 
   <div class="grid grid-cols-3 gap-4 m-4">
     {% for computer in computers %}
     <div class="">
       <img src="{{computer.image.url}}" alt="productimage">
       <h3 class="text-2xl font-bold">{{computer.name}}</h3>
-      <a href="{% url 'comp_detail' computer.id %}">
+      <a href="#">
         <button type="button" class="bg-red-500">
           {{computer.type}} - {{computer.id}}
         </button>
