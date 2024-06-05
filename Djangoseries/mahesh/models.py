@@ -13,6 +13,7 @@ class ComputerVarity(models.Model):
     image = models.ImageField(upload_to='images/')
     date_added = models.DateTimeField(default=timezone.now)
     type = models.CharField(max_length=100, choices=COMPUTER_TYPE_CHOICES)
-    
+    description = models.TextField(default='No Description Available')    
+
     def __str__(self):
         return self.name

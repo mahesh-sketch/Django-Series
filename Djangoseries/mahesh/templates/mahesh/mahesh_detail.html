@@ -1,23 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-  All Computer Item Desciprition
+  All Computer Item Details Page
 {% endblock  %}
 
 {% block content %}
   <h1>Computer Desciprition</h1>
 
-  <div class="grid grid-cols-3 gap-4 m-4">
-    {% for computer in computers %}
-    <div class="">
-      <img src="{{computer.image.url}}" alt="productimage">
-      <h3 class="text-2xl font-bold">{{computer.name}}</h3>
-      <a href="#">
-        <button type="button" class="bg-red-500">
-          {{computer.type}} - {{computer.id}}
-        </button>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
+  <img src="{{computer.image.url}}" alt="productimage">
+  <h3 class="text-2xl font-bold">{{computer.name}}</h3>
+  <p>{{computer.description}}</p>
 {% endblock  %}
