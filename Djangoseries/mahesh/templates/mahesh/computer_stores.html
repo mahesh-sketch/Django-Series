@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Computer Stores</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search Stores</button>
+  </form>
+  {%if stores%}
+  <h1>Stores Available</h1>
+  <ul>
+    {% for store in stores %}
+      <li>{{ store.name }} - {{ store.location }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if not stores %}
+    <h1>No Stores Available</h1>
+  {% endif %}
+ 
+{% endblock %}
